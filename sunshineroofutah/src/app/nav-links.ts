@@ -1,6 +1,6 @@
 import { Nav } from './nav';
 
-export const NAVLINKS: Link[] = [
+export const NAVLINKS = [
     {
       href: "#about",
       title: "About"

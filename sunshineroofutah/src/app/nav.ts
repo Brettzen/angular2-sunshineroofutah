@@ -1,17 +1,6 @@
 export class Nav {
-  links: [
-    {
+  link: {
       href: string,
       title: string
-    }, {
-      href: string,
-      title: string
-    }, {
-      href: string,
-      title: string,
-    }, {
-      href: string,
-      title: string
-    }
-  ];
+    };
 }

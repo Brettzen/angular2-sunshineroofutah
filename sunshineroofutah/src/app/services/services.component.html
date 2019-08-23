@@ -1,1 +1,29 @@
-<p>services works!</p>
+<div class='shadow' id='services'>
+  <h1>{{section.title | uppercase}}</h1>
+  <div class='container'>
+    <div class='row d-flex justify-content-between'>
+      <div class='col-md-4 flex-item'>
+        <h3>Roofing Products</h3>
+        <ul class='list-group-flush'>
+          <li class='list-group-item' *ngFor="let product of products"><a href="{{product.href}}">{{product.title}}</a></li>
+        </ul>
+      </div>
+      <div class='col-md-4 flex-item'>
+        <h3>Roofing Services</h3>
+        <ul class='list-group-flush'>
+          <li class='list-group-item' *ngFor="let service of services"><a href="{{service.href}}">{{service.title}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class='container col-lg-12 col-md-12'>
+    <h3>Manufacturers</h3>
+    <div class='manufacturers'>
+      <div class='row d-flex flex-lg-nowrap justify-content-center'>
+        <div class="flex-item img-thumbnail" *ngFor="let manufacturer of manufacturers">
+          <a href="{{manufacturer.href}}" target="_blank"><img src="{{manufacturer.src}}" alt="{{manufacturer.alt}}"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

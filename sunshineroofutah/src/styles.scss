@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ngx-lightbox/lightbox.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+@font-face {
+    font-family: "Lato";
+    src: url('assets/fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "fontawesome";
+    src: url('assets/fonts/fontawesome-webfont.ttf');
+}
+
+@font-face {
+    font-family: "Bebas Kai";
+    src: url('assets/fonts/BebasKai.ttf');
+}
+
+* {
+  line-height: 2.5vw;
+  letter-spacing: 1px;
+  // word-spacing: 1px;
+}
+
+html, body {
+  font-family: "Lato", "Arial", sans-serif;
+}
+
+h1 {
+  font-family: "Bebas Kai";
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, p {
+  font-weight: normal;
+  line-height: 2em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}

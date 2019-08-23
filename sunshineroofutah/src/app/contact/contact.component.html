@@ -1,1 +1,39 @@
-<p>contact works!</p>
+<!-- <div class='shadow' id='contact'>
+  <div class='container'>
+    <h1>{{section.title | uppercase}}</h1>
+    <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Your email address" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control" formControlName="phone" placeholder="Your phone number">
+      </div>
+      <div class="form-group">
+        <label for="phone">Message</label>
+        <textarea class="form-control" formControlName="msg" rows='10' placeholder="Please describe the work you are interested in receiving a quote on." required></textarea>
+      </div>
+      <div class="form-group">
+        <ngx-recaptcha2 #captchaElem
+          [siteKey]="6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ"
+          (reset)="handleReset()"
+          (expire)="handleExpire()"
+          (load)="handleLoad()"
+          (success)="handleSuccess($event)"
+          [useGlobalDomain]="false"
+          [size]="size"
+          [hl]="lang"
+          [theme]="theme"
+          [type]="type"
+          formControlName="recaptcha">
+        </ngx-recaptcha2>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+  </div>
+</div> -->

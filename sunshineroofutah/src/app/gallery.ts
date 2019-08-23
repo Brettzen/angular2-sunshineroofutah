@@ -1,5 +1,11 @@
 export class Gallery {
-  title: string;
-  desc1: string;
-  desc2: string;
+  section: {
+    title
+  };
+
+  images: {
+    src: string;
+    alt: string;
+  };
+
 }

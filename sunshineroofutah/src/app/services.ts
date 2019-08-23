@@ -1,5 +1,18 @@
 export class Services {
-  title: string;
-  desc1: string;
-  desc2: string;
+  section: {
+    title: string
+  }
+  products: {
+    href: string,
+    title: string
+  };
+  services: {
+    href: string,
+    title: string
+  };
+  manufacturers: {
+    href: string,
+    src: string,
+    alt: string
+  };
 }

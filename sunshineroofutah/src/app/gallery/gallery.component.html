@@ -1,1 +1,9 @@
-<p>gallery works!</p>
+<div class='shadow' id='gallery'>
+  <div class='hidden zoomed-img'></div>
+  <h1>{{section.title}}</h1>
+  <div class='container card-columns'>
+    <div class="card shadow-sm" *ngFor="let img of _albums; let i=index">
+      <img [src]="img.src" class="card-img-top" [alt]="img.alt" (click)="open(i)">
+    </div>
+  </div>
+</div>
