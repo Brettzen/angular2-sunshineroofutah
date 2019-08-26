@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
   public readonly siteKey = "6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ";
 
   public contactForm: FormGroup;
-  public formFubmit = false;
+  public formSubmit = false;
   public captchaIsLoaded = false;
   public captchaSuccess = false;
   public captchaIsExpired = false;
