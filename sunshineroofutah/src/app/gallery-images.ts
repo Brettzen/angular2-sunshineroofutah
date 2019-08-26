@@ -82,10 +82,6 @@ export const GALLERYIMAGES = [
       alt: "Roof Coating"
     },
     {
-      src: "../assets/RoofCoating1.jpg",
-      alt: "Roof Coating"
-    },
-    {
       src: "../assets/RoofCoating2.jpg",
       alt: "Roof Coating"
     },

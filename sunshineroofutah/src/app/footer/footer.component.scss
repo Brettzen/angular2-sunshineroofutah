@@ -1,0 +1,44 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+#footer {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  padding: 50px 100px;
+  font-size: 1.25em;
+
+  .footer-about, .footer-sitemap {
+    border-right: 1px solid #dee2e6;
+
+    @include media-breakpoint-between(xs, sm) {
+      border-right: none;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 25px;
+    }
+  }
+
+  .list-group-flush {
+    border: none;
+
+    .list-group-item {
+      border:none;
+    }
+
+  }
+}
+
+.bbb {
+  margin-left: -36px;
+}
+.money i {
+  font-size: 2em;
+}
+
+
+a.text-light2 {
+  color: rgba(255,255,255,.5);
+}

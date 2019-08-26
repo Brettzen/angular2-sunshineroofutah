@@ -1,12 +1,8 @@
 export class Contact {
   section: {
-    title: string
+    about: string,
+    sitemap: string,
+    contact: string,
+    currentYear: Date
   };
-
-  contactForm: {
-    name: string;
-    email: string;
-    phone: string;
-    msg: string;
-  }
 }

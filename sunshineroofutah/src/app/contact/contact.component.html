@@ -1,7 +1,7 @@
-<!-- <div class='shadow' id='contact'>
+<div class='shadow' id='contact'>
   <div class='container'>
     <h1>{{section.title | uppercase}}</h1>
-    <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" formControlName="name" placeholder="Your name" required>
@@ -20,7 +20,7 @@
       </div>
       <div class="form-group">
         <ngx-recaptcha2 #captchaElem
-          [siteKey]="6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ"
+          [siteKey]="siteKey"
           (reset)="handleReset()"
           (expire)="handleExpire()"
           (load)="handleLoad()"
@@ -33,7 +33,7 @@
           formControlName="recaptcha">
         </ngx-recaptcha2>
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
     </form>
   </div>
-</div> -->
+</div>

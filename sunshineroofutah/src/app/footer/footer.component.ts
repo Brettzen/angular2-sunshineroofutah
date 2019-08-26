@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  section = {
+    about: "About Us",
+    sitemap: "Site Map",
+    contact: "Contact Us",
+    currentYear: new Date().getFullYear()
+  };
+
   constructor() { }
 
   ngOnInit() {

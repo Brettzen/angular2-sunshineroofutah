@@ -1,12 +1,84 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
 #nav {
   font-family: 'Bebas Kai', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-size: 1.5em;
+  font-size: 1.34em;
+  z-index: 100000;
+  @include media-breakpoint-between(md, lg) {
+        font-size: 1.15em;
+        .h1 {
+          font-size: 1.15em;
+        }
+        .logo {
+          width: 150px;
+        }
+        ul {
+          margin-top: initial;
+          margin-bottom: initial;
+        }
+  }
+  @include media-breakpoint-between(sm, md) {
+        font-size: 1.34em;
+        .h1 {
+          font-size: 1em;
+        }
+        .logo {
+          width: 100px;
+        }
+        .links {
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin-top: 30px;
+          margin-bottom: 60px;
+        }
+        .text-left {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin: auto;
+          margin-top: 60px;
+          margin-bottom: 20px;
+        }
+  }
+
+  @include media-breakpoint-between(xs, sm) {
+        font-size: 1.34em;
+        .h1 {
+          font-size: 1em;
+        }
+        .logo {
+          width: 100px;
+        }
+        ul {
+          margin-top: 30px;
+        }
+        .ml-auto {
+          margin-top: 50px;
+        }
+        .links, li, .text-left, .text-left a {
+          display: block;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+  }
 }
 
 .logo {
-  width: 250px;
+  width: 200px;
+}
+
+.links a {
+  color: #aaa !important;
+}
+
+.links a:hover {
+  color: #ddd !important;
 }

@@ -3,6 +3,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "os": [
+        "src/empty.ts"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
