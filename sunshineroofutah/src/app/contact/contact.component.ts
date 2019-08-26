@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Contact } from '../contact';
 
 @Component({
@@ -12,16 +13,16 @@ export class ContactComponent implements OnInit {
     title: "Contact Us for a Free Quote"
   };
 
-  protected readonly siteKey = "6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ";
+  public readonly siteKey = "6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ";
 
-  protected contactForm: FormGroup;
+  public contactForm: FormGroup;
 
   public captchaIsLoaded = false;
   public captchaSuccess = false;
   public captchaIsExpired = false;
   public captchaResponse?: string;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -56,22 +57,12 @@ export class ContactComponent implements OnInit {
     this.captchaIsExpired = true;
   }
 
-  onSubmit(): void {
+  onSubmit(contactForm): void {
     if (this.contactForm.valid) {
-        this.http.post("../emailService.php", email).subscribe();
+        this.http.post("src/emailService.php", this.contactForm['email']).subscribe();
     }
     console.log(this.contactForm.value);
-    var message	= {
-       text:	"Testing",
-       from:	"Sunshine Roofing Company <contact@sunshineroofutah.com>",
-       to:		"Min <brettz.starks@gmail.com>, Minnow <monkeyddoofy@comcast.net>",
-       cc:		"Brad <bradstarks@hotmail.com>",
-       subject:	"Testing emailjs",
-       attachment:
-       [
-          {data:"<html>Testing the email! Test Test.</html>", alternative:true}
-       ]
-    };
+    alert('Thanks! We will get back to you.');
 
   }
 

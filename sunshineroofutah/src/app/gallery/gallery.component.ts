@@ -16,7 +16,7 @@ export class GalleryComponent implements OnInit {
 
   images = GALLERYIMAGES;
 
-  private _albums: Array<{src:string, caption: string, thumb: string}> = [];
+  public _albums: Array<{src:string, caption: string, thumb: string}> = [];
 
   constructor(private _lightbox: Lightbox) {
     for (let img of this.images) {
