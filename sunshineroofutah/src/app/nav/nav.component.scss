@@ -26,7 +26,8 @@
   @include media-breakpoint-between(sm, md) {
         font-size: 1.34em;
         .h1 {
-          font-size: 1em;
+          font-size: 2em;
+          vertical-align: text-top;
         }
         .logo {
           width: 100px;
@@ -37,15 +38,18 @@
           justify-content: space-around;
           flex-wrap: wrap;
           margin-top: 30px;
-          margin-bottom: 60px;
+          margin-bottom: 30px;
         }
         .text-left {
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
           margin: auto;
-          margin-top: 60px;
           margin-bottom: 20px;
+        }
+        .ml-auto {
+          border-top: 1px solid #dee2e6;
+          padding-top: 30px;
         }
   }
 
@@ -53,15 +57,21 @@
         font-size: 1.34em;
         .h1 {
           font-size: 1em;
+          display: none;
         }
         .logo {
           width: 100px;
         }
-        ul {
-          margin-top: 30px;
+        .collapse-h1 {
+            display: block;
+            font-size: 1.5em;
         }
         .ml-auto {
-          margin-top: 50px;
+          border-top: 1px solid #dee2e6;
+          padding-top: 30px;
+        }
+        ul {
+          margin-top: 30px;
         }
         .links, li, .text-left, .text-left a {
           display: block;
@@ -69,6 +79,10 @@
           text-align: center;
         }
   }
+}
+
+.collapse-h1 {
+  display: none;
 }
 
 .logo {

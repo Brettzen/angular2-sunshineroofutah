@@ -1,7 +1,7 @@
 <div class='shadow' id='contact'>
   <div class='container'>
     <h1>{{section.title | uppercase}}</h1>
-    <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
+    <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" [@fadeInOut]="formSubmit ? 'hidden' : 'visible'">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" formControlName="name" placeholder="Your name" required>
@@ -31,5 +31,5 @@
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
     </form>
-  </div>
+    <h2 class='text-success' [@fadeInOut]="formSubmit ? 'visible' : 'hidden'">Thanks! We'll get back to you.</h2>
 </div>

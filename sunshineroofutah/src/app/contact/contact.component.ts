@@ -1,10 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { style, state, animate, transition, trigger } from '@angular/animations';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from '../contact';
 
 @Component({
   selector: 'app-contact',
+  animations: [
+    trigger('fadeInOut', [
+      state('visible', style({ display: 'block' })),
+      state('hidden', style({ display: 'none' })),
+      transition('visible => hidden', [
+        animate('.5s')
+      ]),
+      transition('hidden => visible', [
+        animate('.5s')
+      ]),
+    ]),
+  ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -16,7 +29,7 @@ export class ContactComponent implements OnInit {
   public readonly siteKey = "6LcoVKMUAAAAAB5-Mq4dy7O3Or39DLKHQg5nwDGQ";
 
   public contactForm: FormGroup;
-
+  public formFubmit = false;
   public captchaIsLoaded = false;
   public captchaSuccess = false;
   public captchaIsExpired = false;
@@ -59,10 +72,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit(contactForm): void {
     if (this.contactForm.valid) {
-        this.http.post("src/emailService.php", this.contactForm['email']).subscribe();
+        this.http.post("emailService.php", this.contactForm['email']).subscribe();
+        this.formSubmit = true;
     }
-    console.log(this.contactForm.value);
-    alert('Thanks! We will get back to you.');
 
   }
 
