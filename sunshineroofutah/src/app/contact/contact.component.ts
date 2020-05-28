@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
 
   public contactForm: FormGroup;
   public formSubmit = false;
-  public submitMsg = "pooties";
+  public submitMsg = "";
   public errorMsg = true;
   public captchaIsLoaded = false;
   public captchaSuccess = false;
