@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { style, state, animate, transition, trigger } from '@angular/animations';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Contact } from '../contact';
+import { ContactService } from '../contact/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -30,19 +30,22 @@ export class ContactComponent implements OnInit {
 
   public contactForm: FormGroup;
   public formSubmit = false;
+  public submitMsg = "pooties";
+  public errorMsg = true;
   public captchaIsLoaded = false;
   public captchaSuccess = false;
   public captchaIsExpired = false;
   public captchaResponse?: string;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private contactService : ContactService) { }
 
   ngOnInit() {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
       phone: [''],
-      msg: ['', Validators.required],
+      address: ['', Validators.required],
+      message: ['', Validators.required],
       recaptcha: ['', Validators.required]
     });
   }
@@ -57,7 +60,6 @@ export class ContactComponent implements OnInit {
     this.captchaSuccess = true;
     this.captchaResponse = captchaResponse;
     this.captchaIsExpired = false;
-    console.log(captchaResponse);
   }
 
   handleLoad(): void {
@@ -70,12 +72,29 @@ export class ContactComponent implements OnInit {
     this.captchaIsExpired = true;
   }
 
-  onSubmit(contactForm): void {
+  onSubmit(contactForm) {
     if (this.contactForm.valid) {
-        this.http.post("emailService.php", this.contactForm['email']).subscribe();
-        this.formSubmit = true;
+        let form = JSON.stringify(this.contactForm.value);
+        this.contactService.sendEmail(form).subscribe((response)=> {
+          if (response === 0) {
+            this.errorMsg = true;
+            this.submitMsg = "Sorry, your message couldn't be sent. Please try again later.";
+          } else if (response === 1) {
+            this.errorMsg = false;
+            this.submitMsg = "Thanks! We'll get back to you.";
+          } else {
+            this.errorMsg = true;
+            this.submitMsg = "Sorry, your message couldn't be sent. Please try again later.";
+          }
+        }, (error)=> {
+          this.errorMsg = true;
+          this.submitMsg = "Sorry, your message couldn't be sent. Please try again later.";
+        });
+    } else {
+      this.errorMsg = true;
+      this.submitMsg = "Please fill out all required fields.";
     }
-
+    document.querySelector("#contact").scrollIntoView(true);
+    this.formSubmit = true;
   }
-
 }

@@ -6,7 +6,7 @@
   <div class='collapse navbar-collapse' id="navCollapse">
     <span class='collapse-h1 h1 text-light border-bottom'>Sunshine Roofing Company</span>
     <ul class='navbar-nav mr-auto' class='links'>
-      <li class='nav-item' *ngFor="let link of links">
+      <li class='nav-item' *ngFor="let link of links" data-toggle='collapse' data-target=".navbar-collapse.show">
         <a class='text-light' href="{{link.href}}">{{link.title}}</a>
       </li>
     </ul>
