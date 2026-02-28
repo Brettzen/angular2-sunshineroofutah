@@ -31,7 +31,7 @@
       object-position: right;
       @include media-breakpoint-between(xs, lg) {
         width: initial;
-        min-width: $xl;
+        min-width: 1200px;
         object-position: right;
       }
     }

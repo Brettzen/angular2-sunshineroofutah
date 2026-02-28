@@ -9,7 +9,7 @@ export class FooterComponent implements OnInit {
 
   section = {
     about: "About Us",
-    sitemap: "Site Map",
+    socials: "Follow Us",
     contact: "Contact Us",
     currentYear: new Date().getFullYear()
   };

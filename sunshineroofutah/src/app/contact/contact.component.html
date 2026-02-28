@@ -1,6 +1,11 @@
 <div class='shadow' id='contact'>
   <div class='container'>
     <h1>{{section.title | uppercase}}</h1>
+    <div class="contact-intro">
+      <p class="lead">Need a roof you can count on? <strong>Sunshine Roofing will keep you dry—plain and simple!</strong></p>
+      <p>We have been serving the Uintah Basin since 1982! We would love to help you out with your next project, whether it's a new roof, roof repair, re-roof, commercial, facia/soffit or even a porch.</p> 
+      <p><strong>Contact us today for a FREE ESTIMATE!</strong></p>
+    </div>
     <h2 [hidden]="!formSubmit" [ngClass]="{'text-danger': errorMsg, 'text-success': !errorMsg}">{{submitMsg}}</h2>
     <form class='border bg-light shadow' [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
       <div class="form-group">
